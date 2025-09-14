@@ -1,0 +1,56 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  background: url('../../public/assets/background.png') repeat-y;
+  background-size: cover;
+}
+
+.container {
+  background: #f5ede2;
+  border: 9px solid #366299;
+  border-radius: 18px;
+  width: 500px;
+  height: 500px;
+  margin: 60px auto;
+  padding: 40px 40px 30px 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;     
+}
+
+.motion-logo-placeholder {
+  border: 2px solid #888;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px auto;
+}
+
+button {
+  font-family: 'Nunito', sans-serif;
+  width: 250px;
+  padding: 14px;
+  margin: 12px 0;
+  background: #366299;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #4a86d2;
+}

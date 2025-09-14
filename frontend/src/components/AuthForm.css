@@ -1,0 +1,49 @@
+.logo12 {
+  width: 95%;
+  margin-bottom: 20px auto;
+}
+
+.auth-title {
+  width: 80%;
+  margin: 30px 0 20px 0;
+  color: #514941;
+  font-size: 2.2rem;
+  text-align: left;
+}
+
+.auth-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  width: 400px;
+}
+
+.auth-label b {
+  font-size: 1.5em;
+  margin-bottom: 2px;
+  color: #366299;
+  font-weight: bold;
+}
+
+.auth-label input {
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  height: 55px;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #292521;
+  border: 2.5px solid #c9c2b9;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.auth-label input::placeholder {
+  color: #96928b;      
+  opacity: 1;          
+}
+
+.auth-button {
+  width: 250px;
+  margin-top: 20px;
+}
