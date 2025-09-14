@@ -1,13 +1,13 @@
 .logo12 {
   width: 95%;
-  margin-bottom: 20px auto;
+  margin-bottom: 15px auto;
 }
 
 .auth-title {
   width: 80%;
-  margin: 30px 0 20px 0;
+  margin: 22.5px 0 15px 0;
   color: #514941;
-  font-size: 2.2rem;
+  font-size: 1.65rem;
   text-align: left;
 }
 
@@ -15,13 +15,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 18px;
-  width: 400px;
+  margin-bottom: 13.5px;
+  width: 300px;
 }
 
 .auth-label b {
-  font-size: 1.5em;
-  margin-bottom: 2px;
+  font-size: 1.125em;
+  margin-bottom: 1.5px;
   color: #366299;
   font-weight: bold;
 }
@@ -29,21 +29,21 @@
 .auth-label input {
   font-family: 'Nunito', sans-serif;
   width: 100%;
-  height: 55px;
-  padding: 20px;
-  font-size: 1.2rem;
+  height: 41.25px;
+  padding: 15px;
+  font-size: 0.9rem;
   color: #292521;
-  border: 2.5px solid #c9c2b9;
-  border-radius: 10px;
+  border: 1.875px solid #c9c2b9;
+  border-radius: 7.5px;
   box-sizing: border-box;
 }
 
 .auth-label input::placeholder {
-  color: #96928b;      
-  opacity: 1;          
+  color: #96928b;
+  opacity: 1;
 }
 
 .auth-button {
-  width: 250px;
-  margin-top: 20px;
+  width: 187.5px;
+  margin-top: 15px;
 }
