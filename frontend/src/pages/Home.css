@@ -11,13 +11,13 @@ body {
 
 .container {
   background: #f5ede2;
-  border: 9px solid #366299;
-  border-radius: 18px;
-  width: 500px;
-  height: 500px;
-  margin: 60px auto;
-  padding: 40px 40px 30px 40px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  border: 6.75px solid #366299;
+  border-radius: 13.5px;
+  width: 375px;
+  height: 375px;
+  margin: 45px auto;
+  padding: 30px 30px 22.5px 30px;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.08);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -26,27 +26,27 @@ body {
 }
 
 .motion-logo-placeholder {
-  border: 2px solid #888;
+  border: 1.5px solid #888;
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  width: 225px;
+  height: 225px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 22.5px auto;
 }
 
 button {
   font-family: 'Nunito', sans-serif;
-  width: 250px;
-  padding: 14px;
-  margin: 12px 0;
+  width: 187.5px;
+  padding: 10.5px;
+  margin: 9px 0;
   background: #366299;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s;
 }
