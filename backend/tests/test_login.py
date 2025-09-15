@@ -6,7 +6,8 @@ import pytest
 # Add the app directory to sys.path
 sys.path.append(os.path.join(os.path.dirname(__file__), '../app'))
 
-from app import app, get_db_connection
+from app.app import app
+from app.routes.user_routes import get_db_connection
 
 @pytest.fixture
 def client():
@@ -14,19 +15,22 @@ def client():
     app.config['TESTING'] = True
     app.config['MYSQL_DB'] = os.getenv('MYSQL_DB', 'CharaVault')
     client = app.test_client()
-
     yield client
 
-def clear_users_table():
-    db = get_db_connection()
-    cursor = db.cursor()
-    cursor.execute("DELETE FROM users")
-    db.commit()
-    cursor.close()
-    db.close()
+@pytest.fixture(autouse=True)
+def clear_tables():
+    with app.app_context():
+        db = get_db_connection()
+        cursor = db.cursor()
+        cursor.execute("DELETE FROM OC_Tags")
+        cursor.execute("DELETE FROM Tags")
+        cursor.execute("DELETE FROM Original_Characters")
+        cursor.execute("DELETE FROM users")
+        db.commit()
+        cursor.close()
+        db.close()
 
-def test_register_success(client):
-    clear_users_table()
+def test_register_success(client, clear_tables):
     response = client.post('/register', json={
         'username': 'testuser',
         'password': 'testpass'
@@ -34,15 +38,14 @@ def test_register_success(client):
     assert response.status_code == 201
     assert b'User created successfully' in response.data
 
-def test_register_missing_fields(client):
+def test_register_missing_fields(client, clear_tables):
     response = client.post('/register', json={
         'username': 'testuser2'
     })
     assert response.status_code == 400
     assert b'Username and password required' in response.data
 
-def test_register_duplicate_username(client):
-    clear_users_table()
+def test_register_duplicate_username(client, clear_tables):
     # Register first user
     client.post('/register', json={
         'username': 'duplicateuser',
@@ -56,8 +59,7 @@ def test_register_duplicate_username(client):
     assert response.status_code == 409
     assert b'Username already exists' in response.data
 
-def test_login_success(client):
-    clear_users_table()
+def test_login_success(client, clear_tables):
     # Register a user first
     client.post('/register', json={
         'username': 'loginuser',
@@ -71,8 +73,7 @@ def test_login_success(client):
     assert response.status_code == 200
     assert b'Login successful' in response.data
 
-def test_login_wrong_password(client):
-    clear_users_table()
+def test_login_wrong_password(client, clear_tables):
     # Register a user first
     client.post('/register', json={
         'username': 'loginuser2',
@@ -86,8 +87,7 @@ def test_login_wrong_password(client):
     assert response.status_code == 401
     assert b'Invalid username or password' in response.data
 
-def test_login_nonexistent_user(client):
-    clear_users_table()
+def test_login_nonexistent_user(client, clear_tables):
     # Attempt to log in with a username that doesn't exist
     response = client.post('/login', json={
         'username': 'nouser',
@@ -96,7 +96,7 @@ def test_login_nonexistent_user(client):
     assert response.status_code == 401
     assert b'Invalid username or password' in response.data
 
-def test_login_missing_fields(client):
+def test_login_missing_fields(client, clear_tables):
     # Attempt to log in with missing password
     response = client.post('/login', json={
         'username': 'someone'
