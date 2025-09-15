@@ -18,8 +18,8 @@ app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD')
 app.config['MYSQL_DB'] = os.getenv('MYSQL_DB')
 
 # Register blueprints
-from .routes.user_routes import user_bp
-from .routes.character_routes import character_bp
+from app.routes.user_routes import user_bp
+from app.routes.character_routes import character_bp
 app.register_blueprint(user_bp)
 app.register_blueprint(character_bp)
 
