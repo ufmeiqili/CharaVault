@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: url('../../public/assets/brand/background.png') repeat-y;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.main-page {
+  margin-top: 100px;
+  min-height: 100vh;
+}
+
+.main-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #366299;
+  font-size: 0.9rem;
+}
+
+.search-section {
+  background: #f5ede2;
+  border: 3px solid #366299;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 760px;
+}
+
+.search-toggles {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: 2px solid #366299;
+  background: white;
+  color: #366299;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.toggle-btn.active,
+.toggle-btn:hover {
+  background: #366299;
+  color: white;
+}
+
+.search-form {
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #c9c2b9;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #366299;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .characters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .characters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .characters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.character-card {
+  background: #f5ede2;
+  border: 3px solid #366299;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.character-image {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  border: 2px solid #366299;
+}
+
+.character-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-info {
+  text-align: center;
+}
+
+.character-name {
+  color: #366299;
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.character-artist {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+} 
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 1.1rem;
+}

@@ -1,0 +1,255 @@
+.character-profile {
+  min-height: 100vh;
+  padding-top: 100px; /* Account for fixed header */
+  padding-bottom: 50px;
+}
+
+.profile-content {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #366299;
+  font-size: 1.2rem;
+}
+
+.profile-container {
+  background: #f5ede2;
+  border: 3px solid #366299;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 760px;
+
+}
+
+.profile-tabs {
+  display: flex;
+  width: 80%;
+  border-radius: 5px;
+  background: #366299;
+}
+
+.tab-btn {
+  flex: 1;
+  /* padding: 15px 20px; */
+  margin: 10px 10px;
+  background: transparent;
+  color: white;
+  border-radius: 5px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.profile-main {
+  padding: 30px;
+  width: 80%;
+  min-height: 500px;
+}
+
+/* Bio Tab Styles */
+.bio-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.character-header {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .character-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.character-image-container {
+  flex-shrink: 0;
+}
+
+.character-headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #366299;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.character-headshot:hover {
+  transform: scale(1.05);
+}
+
+.character-info {
+  flex: 1;
+}
+
+.character-profile  .character-name {
+  text-align: left;
+  color: #366299;
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.character-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: #96928b;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.character-description h3 {
+  color: #366299;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.description-text {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #c9c2b9;
+  height: 175px;
+}
+
+/* Art Tab Styles */
+.art-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.art-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.art-item {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #c9c2b9;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.art-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.art-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.art-number {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(54, 98, 153, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.no-art {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.pagination {
+  text-align: center;
+  color: #366299;
+  font-weight: bold;
+}
+
+/* Image Modal */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

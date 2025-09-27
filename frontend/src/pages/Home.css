@@ -1,3 +1,36 @@
+/* Video overlay styles */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.intro-video {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+}
+
+/* Main content blur effect */
+.main-content {
+  transition: filter 0.3s ease;
+}
+
+.main-content.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Keep your existing styles below */
 body {
   min-height: 100vh;
   margin: 0;
@@ -5,7 +38,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Nunito', sans-serif;
-  background: url('../../public/assets/background.png') repeat-y;
+  background: url('../../public/assets/brand/background.png') repeat-y;
   background-size: cover;
 }
 
@@ -25,15 +58,17 @@ body {
   align-items: center;     
 }
 
-.motion-logo-placeholder {
-  border: 1.5px solid #888;
-  border-radius: 50%;
-  width: 225px;
-  height: 225px;
+.logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 22.5px auto;
+}
+
+.home-logo {
+  width: 350px;
+  height: 125px;
+  object-fit: contain;
 }
 
 button {
@@ -48,9 +83,9 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background: #4a86d2;
+  background: #285d7a;
 }

@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: url('../../public/assets/brand/background.png') repeat-y;
+  background-size: cover;
+  min-height: 100vh;
+}
+.profile-page {
+  min-height: 100vh;
+  padding-top: 100px; /* Account for fixed header */
+}
+
+.profile-content {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #366299;
+  font-size: 0.9rem;
+}
+
+.profile-container {
+  background: #f5ede2;
+  border: 3px solid #366299;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.profile-header {
+  color: #376299;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  margin: 0 0 20px 0;
+  font-weight: bold;
+}
+
+.username {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.character-section {
+  width: 100%;
+  max-width: 800px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #366299;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.character-card {
+  background: #f5ede2;
+  width: 150px;
+  border: 3px solid #366299;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.character-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  border: 3px solid #366299;
+}
+
+.character-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-info {
+  text-align: center;
+}
+
+.character-name {
+  color: #366299;
+  margin: 0 0 5px 0;
+  font-size: 2rem; /* Increase this value to make it larger */
+  font-weight: bold;
+}
+
+.character-artist {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.no-characters {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-characters p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.create-character-btn {
+  background: #366299;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.create-character-btn:hover {
+  background: #4a86d2;
+}

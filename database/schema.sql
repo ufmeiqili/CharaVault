@@ -1,8 +1,32 @@
 CREATE DATABASE IF NOT EXISTS CharaVault;
 USE CharaVault;
 
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Original_Characters (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    artist_id INT NOT NULL,
+    description TEXT,
+    turnaround_image VARCHAR(512),
+    headshot_image VARCHAR(512),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (artist_id) REFERENCES Users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS Tags (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tag VARCHAR(32) UNIQUE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS OC_Tags (
+    oc_id INT NOT NULL,
+    tag_id INT NOT NULL,
+    PRIMARY KEY (oc_id, tag_id),
+    FOREIGN KEY (oc_id) REFERENCES Original_Characters(id) ON DELETE CASCADE,
+    FOREIGN KEY (tag_id) REFERENCES Tags(id) ON DELETE CASCADE
 );
